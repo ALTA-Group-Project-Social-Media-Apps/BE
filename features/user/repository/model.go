@@ -10,8 +10,9 @@ type User struct {
 	gorm.Model
 	Username string
 	Email    string
-	Password string
 	Photo    string
+	Bio      string
+	Password string
 }
 
 func FromDomain(du domain.Core) User {
@@ -19,8 +20,9 @@ func FromDomain(du domain.Core) User {
 		Model:    gorm.Model{ID: du.ID},
 		Username: du.Username,
 		Email:    du.Email,
-		Password: du.Password,
 		Photo:    du.Photo,
+		Bio:      du.Bio,
+		Password: du.Password,
 	}
 }
 
@@ -30,15 +32,16 @@ func ToDomain(u User) domain.Core {
 		ID:       u.ID,
 		Username: u.Username,
 		Email:    u.Email,
-		Password: u.Password,
 		Photo:    u.Photo,
+		Bio:      u.Bio,
+		Password: u.Password,
 	}
 }
 
 func ToDomainArray(au []User) []domain.Core {
 	var res []domain.Core
 	for _, val := range au {
-		res = append(res, domain.Core{ID: val.ID, Username: val.Username, Email: val.Email, Password: val.Password, Photo: val.Photo})
+		res = append(res, domain.Core{ID: val.ID, Username: val.Username, Email: val.Email, Photo: val.Photo, Bio: val.Bio, Password: val.Password})
 	}
 
 	return res
