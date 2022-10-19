@@ -111,7 +111,7 @@ paths:
               photo: aziz123.jpg
               bio: "oplover"
       responses:
-        '201':
+        '200':
           description: "success update user"
           content:
             application/json:
@@ -256,7 +256,6 @@ paths:
                     comment:
                       - id_comment: 2
                         username: "aziz123"
-                        id_post: 1
                         content: "why r u reading mid" 
                   - id_post: 2
                     content: "#spoilerkaguya-sama"
@@ -265,7 +264,6 @@ paths:
                     comment:
                       - id_comment: 2
                         username: "aziz123"
-                        id_post: 1
                         content: "why r u reading mid" 
         '400':
           $ref: "#/components/responses/400"
@@ -298,8 +296,6 @@ paths:
                   photo: "server/onepiece1064spoiler.jpg"
                   username: "aziz123"
                   created_at: "2022-10-17 10:24:17"
-                  updated_at: "2022-10-18 10:24:17"
-                  deleted_at:
         '400':
           $ref: "#/components/responses/400"
         '500':
@@ -338,8 +334,6 @@ paths:
                   photo: "server/onepiece1064spoiler.jpg"
                   username: "aziz123"
                   created_at: "2022-10-17 10:24:17"
-                  updated_at: "2022-10-18 10:24:17"
-                  deleted_at:
         '400':
           $ref: "#/components/responses/400"
         '500':
