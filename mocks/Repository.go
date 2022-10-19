@@ -52,6 +52,20 @@ func (_m *Repository) Update(updateData domain.Core) (domain.Core, error) {
 	}
 
 	return r0, r1
+ }
+ 
+ // Delete provides a mock function with given fields: ID
+func (_m *Repository) Delete(ID uint) error {
+	ret := _m.Called(ID)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(uint) error); ok {
+		r0 = rf(ID)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
 }
 
 type mockConstructorTestingTNewRepository interface {

@@ -2,11 +2,12 @@ package services
 
 import (
 	"errors"
-	"strings"
+  "strings"
 
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/config"
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/domain"
 	"golang.org/x/crypto/bcrypt"
+  "github.com/labstack/gommon/log"
 )
 
 type userService struct {
@@ -41,6 +42,7 @@ func (us *userService) AddUser(newUser domain.Core) (domain.Core, error) {
 
 	return res, nil
 }
+
 func (us *userService) UpdateProfile(updatedData domain.Core) (domain.Core, error) {
 	if updatedData.Password != "" {
 		generate, _ := bcrypt.GenerateFromPassword([]byte(updatedData.Password), 10)
@@ -56,4 +58,14 @@ func (us *userService) UpdateProfile(updatedData domain.Core) (domain.Core, erro
 	}
 
 	return res, nil
+ }
+ 
+ func (us *userService) Delete(ID uint) error {
+	err := us.qry.Delete(ID)
+	if err != nil {
+		log.Error(err.Error())
+		return errors.New("no data")
+	}
+
+	return nil
 }

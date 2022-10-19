@@ -5,7 +5,9 @@ import (
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/delivery"
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/repository"
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services"
+
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/utils/database"
+	database "github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/utils"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

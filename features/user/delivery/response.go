@@ -6,26 +6,19 @@ func SuccessResponse(msg string, data interface{}) map[string]interface{} {
 	return map[string]interface{}{
 		"message": msg,
 		"data":    data,
+    }
+   }
+   
+func SuccessDelete(msg string) map[string]interface{} {
+	return map[string]interface{}{
+		"message": msg,
+
 	}
 }
 
 func FailResponse(msg string) map[string]string {
 	return map[string]string{
 		"message": msg,
-	}
-}
-
-func SuccessDelete(msg string) map[string]interface{} {
-	return map[string]interface{}{
-		"message": msg,
-	}
-}
-
-func SuccessLogin(msg string, token string, data interface{}) map[string]interface{} {
-	return map[string]interface{}{
-		"message": msg,
-		"data":    data,
-		"token":   token,
 	}
 }
 
@@ -52,3 +45,4 @@ func ToResponse(core interface{}, code string) interface{} {
 
 	return res
 }
+

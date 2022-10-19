@@ -3,10 +3,9 @@ package services
 import (
 	"errors"
 	"testing"
-
-	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/config"
+  "github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/config"
 	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/domain"
-	"github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/mocks"
+  "github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -59,8 +58,8 @@ func TestUpdate(t *testing.T) {
 		assert.Equal(t, input.Username, res.Username, "Nama user harus sesuai")
 		repo.AssertExpectations(t)
 	})
-
-	t.Run("Gagal Update", func(t *testing.T) {
+  
+  t.Run("Gagal Update", func(t *testing.T) {
 		repo.On("Update", mock.Anything).Return(domain.Core{}, errors.New("rejected from database")).Once()
 		srv := New(repo)
 		input := domain.Core{Username: "same", Email: "skjsa", Password: "same"}
@@ -68,6 +67,27 @@ func TestUpdate(t *testing.T) {
 		assert.NotNil(t, err)
 		assert.EqualError(t, err, "rejected from database", "Pesan error tidak sesuai")
 		assert.Equal(t, uint(0), res.ID, "ID seharusnya 0 karena gagal input data")
-		repo.AssertExpectations(t)
+    repo.AssertExpectations(t)
 	})
 }
+
+func TestDelete(t *testing.T) {
+	repo := mocks.NewRepository(t)
+	t.Run("success", func(t *testing.T) {
+		repo.On("Delete", mock.Anything).Return(nil).Once()
+		srv := New(repo)
+		input := uint(1)
+		err := srv.Delete(input)
+		assert.Nil(t, err)
+		repo.AssertExpectations(t)
+	})
+	t.Run("Failed Delete", func(t *testing.T) {
+		repo.On("Delete", mock.Anything).Return(errors.New("no data")).Once()
+		srv := New(repo)
+		input := uint(7)
+		err := srv.Delete(input)
+		assert.NotNil(t, err)
+		assert.EqualError(t, err, "no data", "error message doesn't match")
+    repo.AssertExpectations(t)
+	})
+}	

@@ -37,3 +37,13 @@ func (rq *repoQuery) Update(updatedData domain.Core) (domain.Core, error) {
 	updatedData = ToDomain(cnv)
 	return updatedData, nil
 }
+
+func (rq *repoQuery) Delete(ID uint) error {
+	var resQry User
+	if err := rq.db.Delete(&resQry, "ID = ?", ID).Error; err != nil {
+		return err
+	}
+
+	return nil
+}
+

@@ -1,4 +1,5 @@
 mode: set
+
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:16.49,20.2 1 1
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:22.74,24.28 2 1
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:28.2,28.28 1 1
@@ -17,3 +18,8 @@ github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:51.16,52.46 1 1
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:55.3,55.61 1 1
 github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:52.46,54.4 1 0
+
+github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:14.49,18.2 1 1
+github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:20.46,22.16 2 1
+github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:27.2,27.12 1 1
+github.com/ALTA-Group-Project-Social-Media-Apps/Social-Media-Apps/features/user/services/services.go:22.16,25.3 2 1
